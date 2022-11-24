@@ -1,4 +1,5 @@
 from datetime import datetime as dt
+from datetime import time as ti
 
 FerTimeDict = {
        0 : "midnight snack", #12:00am
@@ -35,20 +36,25 @@ FerTimeDict = {
 }
 
 FerList = list(FerTimeDict.keys())
+now = dt.now().strftime("%H%M")
+nowint = int(now)
+FerTime = ""
+NowTime = dt.now().strftime("%I:%M%p")
+
+for i in FerList:
+    if nowint > i: FerTime = i
+    else: break
+FerTime = FerTimeDict[FerTime]
 
 
 def FerTimeTran():
-    now = dt.now().strftime("%H%M")
-    nowint = int(now)
-    FerTime = ""
-    NowTime = dt.now().strftime("%I:%M%p")
-    
-    for i in FerList:
-        if nowint > i: FerTime = i
-        else: break
-    FerTime = FerTimeDict[FerTime]
     
     return NowTime+" | Time for "+FerTime
 
 print("What Time Is It?")
 print(FerTimeTran())
+
+#To Do:
+#Auto Update based on time left until next time
+#Have it clear the terminal on update
+# have it show timezone as well >>1:40PM MST | Time for lunch (just a snack)
