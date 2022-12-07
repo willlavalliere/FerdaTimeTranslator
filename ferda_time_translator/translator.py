@@ -2,7 +2,7 @@ import sys
 from bisect import bisect_right
 from datetime import datetime
 
-from constants import ferda_time
+from .constants import ferda_time
 
 
 def low_bound_bisect(a, x):
