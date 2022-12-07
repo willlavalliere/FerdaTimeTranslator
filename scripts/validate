@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+echo "Sorting imports..."
+poetry run isort --atomic .
+echo "Formatting code..."
+poetry run black --line-length 79 .
+echo "Linting code..."
+poetry run flake8 .
+echo "Testing code..."
+poetry run pytest
