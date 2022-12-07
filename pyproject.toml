@@ -3,7 +3,7 @@ name = "ferda_time_translator"
 version = "0.1.1"
 description = "Simple program that will translate the current time into ferda standard time (FST)"
 authors = ["Will Lavalliere <willlavalliere@gmail.com>", "Gavin Hailey <gavin.g.hailey@gmail.com>"]
-license = "gpl-3.0"
+license = "mit"
 
 [tool.poetry.dependencies]
 python = ">=3.9"
